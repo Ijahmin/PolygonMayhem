@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private LayerMask terrain;
     [SerializeField] private Transform groundCheckPoint;
-    [SerializeField] private Vector2 groundCheckSize = new Vector2(.5f, .01f);
+    [SerializeField] private Vector2 groundCheckSize = new Vector2(.985f, .01f);
 
     [SerializeField] private Transform frontWallCheckPoint;
     [SerializeField] private Transform backWallCheckPoint;
@@ -92,5 +92,13 @@ public class PlayerMovement : MonoBehaviour
         bool backWallCheck = (Physics2D.OverlapBox(backWallCheckPoint.position, wallCheckSize, 0, terrain) && dirX < -0.01f);
 
         return frontWallCheck || backWallCheck;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(groundCheckPoint.position, groundCheckSize);
+        Gizmos.DrawWireCube(backWallCheckPoint.position, wallCheckSize);
+        Gizmos.DrawWireCube(frontWallCheckPoint.position, wallCheckSize);
     }
 }
