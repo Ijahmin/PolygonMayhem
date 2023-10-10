@@ -1,0 +1,15 @@
+
+Horizontal Movement:
+ - Implement slight slide after key release (maybe)
+ 
+Jumping:
+ - Wall Jumps
+ - Floatier jumps
+ - Coyote Time
+ 
+Weapons:
+ - Basic sprites
+ 
+Systems:
+ - Ragdoll / Force moving players and moveable terrain
+ - Health / Damage
